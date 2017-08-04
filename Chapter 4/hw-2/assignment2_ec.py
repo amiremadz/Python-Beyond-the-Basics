@@ -1,5 +1,4 @@
 import abc
-import csv
 import datetime
 
 class WriteFile(object):
