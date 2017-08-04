@@ -1,0 +1,2 @@
+class ConfigDict(dict):
+    pass
