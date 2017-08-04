@@ -11,6 +11,8 @@ log.write('this is another message')
 c.write(['a', 'b', 'c', 'd'])
 c.write(['1', '2', '3', '4'])
 
+log.close()
+c.close()
 
 # writecsv = WriteFile('text2.csv', CSVFormatter)
 # writelog = writelog('log2.txt', LogFormatter)
