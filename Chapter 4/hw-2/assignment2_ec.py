@@ -6,16 +6,18 @@ class WriteFile(object):
 
 	def __init__(self, file_name):
 		self.file_name = file_name
+		self.file = open(self.file_name, 'wb')
 
 	@abc.abstractmethod
 	def write(self, this_line):
 		return
 
+	def close(self):
+		self.file.close()
+
 	def write_line(self, this_line):
-		file = open(self.file_name, 'a')
-		file.write(this_line + '\n')
-		file.close()	
-	
+		self.file.write(this_line + '\n')
+		
 class LogFile(WriteFile):
 	def write(self, this_line):
 		dt_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
