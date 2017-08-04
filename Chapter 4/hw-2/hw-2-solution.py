@@ -3,16 +3,13 @@
 from assignment2_ec import LogFile, DelimFile
 
 log = LogFile('log1.txt')
-c = DelimFile('text1.csv')
+c = DelimFile('text1.csv', ',')
 
 log.write('this is a log message')
 log.write('this is another message')
 
 c.write(['a', 'b', 'c', 'd'])
 c.write(['1', '2', '3', '4'])
-
-log.close()
-c.close()
 
 
 # writecsv = WriteFile('text2.csv', CSVFormatter)
