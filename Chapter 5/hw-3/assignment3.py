@@ -14,8 +14,8 @@ class ConfigDict(dict):
     	except:
     		print 'There is no config file.'
     		print 'Creating one.'
-    		self.file = open(file_name, 'w+')
-	    	self.file.close()
+    		file = open(self._file_name, 'w+')
+	    	file.close()
 
     def __setitem__(self, key, val):
     	super(ConfigDict, self).__setitem__(key, val)
