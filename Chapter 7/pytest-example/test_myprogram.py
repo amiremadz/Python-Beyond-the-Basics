@@ -8,10 +8,12 @@ class TestDoubleIt(object):
     file_template = 'testnums_template.txt'
     file_tester = 'testnums_tester.txt'
     
-    def setup_class(self):
+    @classmethod
+    def setup_class(cls):
         shutil.copy(TestDoubleIt.file_template, TestDoubleIt.file_tester)
 
-    def teardown_class(self):
+    @classmethod
+    def teardown_class(cls):
         os.remove(TestDoubleIt.file_tester)
 
     def test_doublelines(self):
