@@ -13,12 +13,10 @@ class TestConfigDict(object):
 	def setup_class(cls):
 		shutil.copy(TestConfigDict.file_template, TestConfigDict.file_tester)
 
-
 	@classmethod
 	def teardown_class(cls):
 		os.remove(TestConfigDict.file_tester)
 		os.remove(TestConfigDict.file_new)
-
 
 	def test_object_type(self):
 		mydict = ConfigDict(TestConfigDict.file_tester)
@@ -33,7 +31,6 @@ class TestConfigDict(object):
 		assert not os.path.isfile(TestConfigDict.file_new)
 		mydict = ConfigDict(TestConfigDict.file_new)
 		assert os.path.isfile(TestConfigDict.file_new)
-	
 
 	def test_bad_path(self):
 		# Method 1
@@ -75,7 +72,6 @@ class TestConfigDict(object):
 					assert True
 					return
 		assert False			
-
 
 	def test_write_key_read(self):
 		dict_1 = ConfigDict(TestConfigDict.file_tester)
